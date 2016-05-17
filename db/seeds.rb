@@ -26,3 +26,13 @@ require 'faker'
   })
   space.save
 end
+
+10.times do
+  user = User.new({
+    email: Faker::Internet.free_email,
+    password: 'valid_password',
+    password_confirmation: 'valid_password',
+  })
+  user.save
+end
+
