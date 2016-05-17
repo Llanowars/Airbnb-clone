@@ -1,4 +1,23 @@
-<%= simple_form_for([ @space, @reservation ]) do |form| %>
-  <%= form.input :start_at %>
-  <%= form.button :submit %>
-<% end %>
+<div class="wrapper-form-blue">
+  <div class="container">
+    <%= simple_form_for([ @space, @reservation ]) do |reservation| %>
+      <%= reservation.error_notification %>
+      <div class="row bot-marged">
+          <h3>Reservation dates</h3>
+        <div class="col-xs-12 col-sm-8 col-lg-6 padded-vertical">
+          <%= reservation.input :start_at, class: "field-big"%><br>
+          <%= reservation.input :end_at, class: "field-big"%><br>
+        </div>
+      </div>
+      <div class="row">
+       <h3>Pricing and availability</h3>
+       <div class="col-xs-6 col-sm-3 col-md-4 padded-vertical">
+        <%= reservation.input :price, class: "field-big " %><br>
+       </div>
+     </div>
+     <div class="row padded-vertical">
+      <%= reservation.submit class: "btn-primary"%>
+     </div>
+    <% end %>
+  </div>
+</div>
