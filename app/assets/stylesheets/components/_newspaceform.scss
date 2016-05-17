@@ -8,6 +8,10 @@ padding-left: 20px;
   margin-bottom: 2px;
 }
 
+.row.first-top-marged {
+  margin-top: 30px;
+}
+
 .form-instruction {
   font-size: 0.9em;
   color: #777;
@@ -24,4 +28,32 @@ padding-left: 20px;
 
 .row label {
   padding-right: 20px;
+  color: #364F6B
+}
+
+.form-inline .radio {
+  border: solid 1px #EEE;
+  padding: 12px;
+}
+
+.form-inline .radio input {
+  margin-right: 10px;
+}
+
+span.radio:hover {
+  background-color:#F5A8BF;
+}
+
+span.radio:checked {
+  background-color:#FC5185;
+}
+
+.simple_form h3 {
+  color: #364F6B
+}
+
+.header h2 {
+  color: white;
+  padding-top:40px;
+  padding-bottom:40px;
 }

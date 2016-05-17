@@ -1,8 +1,13 @@
-<div class="wrapper-form-blue">
+<div class="wrapper-pink header">
+  <div class="container text-center">
+    <h2><%=User.all.size%> freelancers in Paris are ready to discover your workplace, add it now !  </h2>
+  </div>
+</div>
+<div class="wrapper-blue-light">
   <div class="container">
     <%= simple_form_for(@space) do |space| %>
       <%= space.error_notification %>
-      <div class="row bot-marged">
+      <div class="row bot-marged first-top-marged">
           <h3>Your workplace informations</h3>
         <div class="col-xs-12 col-sm-8 col-lg-6 padded-vertical">
           <%= space.input :name, class: "field-big"%><br>
@@ -11,13 +16,13 @@
       <div class="row form-inline">
         <h3>Services</h3>
         <div class="col-xs-12 col-sm-4 col-md-4 padded-vertical">
-          <%= space.input :has_wifi, as: :radio_buttons %>
+          <%= space.input :has_wifi, as: :radio_buttons, label: "Free WIFI" %>
         </div>
         <div class="col-xs-12 col-sm-4 col-md-4 padded-vertical">
-          <%= space.input :has_drink, as: :radio_buttons %>
+          <%= space.input :has_drink, as: :radio_buttons, label: "Drinks to buy" %>
         </div>
         <div class="col-xs-12 col-sm-4 col-md-4 padded-vertical">
-          <%= space.input :has_food, as: :radio_buttons, type: "radio", autocomplete: "off" %>
+          <%= space.input :has_food, as: :radio_buttons, label: "Food to buy" %>
         </div>
       </div>
       <div class="row bot-marged">
@@ -55,18 +60,6 @@
      </div>
     <% end %>
   </div>
-</div>
-
-<div class="btn-group" data-toggle="buttons">
-  <label class="btn btn-primary active">
-    <input type="radio" name="options" id="option1" autocomplete="off" checked> Radio 1 (preselected)
-  </label>
-  <label class="btn btn-primary">
-    <input type="radio" name="options" id="option2" autocomplete="off"> Radio 2
-  </label>
-  <label class="btn btn-primary">
-    <input type="radio" name="options" id="option3" autocomplete="off"> Radio 3
-  </label>
 </div>
 
 
