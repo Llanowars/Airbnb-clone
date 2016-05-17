@@ -16,6 +16,26 @@ ActiveRecord::Schema.define(version: 20160517100547) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "spaces", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.decimal  "daily_price"
+    t.decimal  "weekly_price"
+    t.string   "description"
+    t.boolean  "has_food"
+    t.boolean  "has_drink"
+    t.boolean  "has_wifi"
+    t.string   "phone_number"
+    t.integer  "max_people"
+    t.integer  "user_id"
+    t.float    "lat"
+    t.float    "lng"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "spaces", ["user_id"], name: "index_spaces_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -41,4 +61,5 @@ ActiveRecord::Schema.define(version: 20160517100547) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "spaces", "users"
 end
