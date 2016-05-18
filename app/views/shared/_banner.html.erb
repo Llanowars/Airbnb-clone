@@ -2,11 +2,16 @@
 
   <div class="banner-content">
     <h1>Building communities to inovate together</h1>
+    <p>Find the space you need to create your life's work.</p>
     <div class="search">
       <form action="#" class="form-inline">
-        <input type="text" class="form-control input-lg" placeholder="Paris">
-        <input type="text" class="form-control input-lg" placeholder="<%= Date.today %>">
-        <input type="submit" class="btn btn-primary btn-lg" value="Search">
+        <input type="text" class="form-control input-lg" placeholder="Paris" id="location" >
+        <div class="input-daterange input-group" id="datepicker">
+          <input type="text" class="input-sm form-control" name="start"  />
+          <span class="input-group-addon">to</span>
+          <input type="text" class="input-sm form-control" name="end" />
+        </div>
+        <%= link_to t(".top_call_to_action", default: "Search"), spaces_path, class: "btn btn-primary btn-lg" %>
       </form>
     </div>
   </div>
