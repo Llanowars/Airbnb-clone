@@ -38,7 +38,7 @@
             <p class="file-upload-text"><i class="fa fa-camera-retro fa-2x"></i>Add a picture </p>
 
           <div class="file-upload btn-primary">
-            <%= space.input :photo, as: :attachinary, class: "btn-primary", label: false %>
+            <%= space.input :photo, as: :attachinary, class: "btn-secondary", label: false %>
           </div>
           <p class="form-instruction pictures-instructions">Upload up to 8 pictures.</p>
         </div>
@@ -67,7 +67,7 @@
        </div>
      </div>
      <div class="row padded-vertical">
-      <%= space.submit class: "btn-primary btn-big"%>
+      <%= space.button :submit, "Create workspace", class: "btn-primary btn-big" %>
      </div>
 
     <% end %>
