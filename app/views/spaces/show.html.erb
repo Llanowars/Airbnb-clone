@@ -1,5 +1,36 @@
 <div class="banner-space" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path('banner.jpg') %>');">
 </div>
+
+<div class="wrapper-blue-light">
+  <div class="container text-center">
+    <div class="row bot-marged first-top-marged">
+      <div class="col-xs-12 col-md-6 col-lg-6">
+        <h1><%= @space.name %></h1>
+        </div>
+    </div>
+     <div class="row form-inline">
+        <h3>Services</h3>
+        <div class="col-xs-12 col-sm-4 col-md-4 padded-vertical">
+        <p>Wifi: <%= @space.has_wifi ? "Yes" : "No" %> </p>
+        <p>Drinks: <%= @space.has_wifi ? "Yes" : "No" %> </p>
+        <p>Food: <%= @space.has_wifi ? "Yes" : "No"%> </p>
+     </div>
+      </div>
+    <div class="row bot-marged first-top-marged">
+      <div class="col-xs-8 col-md-6 col-lg-8">
+        <p><%= @space.description %></p>
+        <p><%= @space.address%></p>
+        <p><%= @space.lng%></p>
+        <p><%= @space.lat%></p>
+     </div>
+    </div>
+  </div>
+    <div class="col-xs-12 col-md-6 col-lg-4">
+      <h1><%= @space.daily_price %>/day</h1>
+    </div>
+</div>
+
+
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-6 col-lg-8">
@@ -29,7 +60,7 @@
     <script type="text/javascript">
       var map = new google.maps.Map(document.getElementById('map'), {
       center: { lat: <%= @space.lat %>, lng: <%= @space.lat %>  },
-      zoom: 14  // Change this value from 0 to 18
+      zoom: 8  // Change this value from 0 to 18
     });
     var marker = new google.maps.Marker({
       map: map,
