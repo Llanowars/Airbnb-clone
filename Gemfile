@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
+  gem "rails-assets-bootstrap-datepicker"
 end
+
 ruby '2.3.0'
 
 gem 'rails', '4.2.6'
@@ -28,9 +30,6 @@ gem "coffee-rails"
 gem "gmaps4rails"
 gem "geocoder"
 
-source "https://rails-assets.org" do
-  gem 'rails-assets-bootstrap-datepicker'
-end
 
 group :development, :test do
   gem 'binding_of_caller'
