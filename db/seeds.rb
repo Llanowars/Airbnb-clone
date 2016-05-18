@@ -9,6 +9,7 @@
 require 'faker'
 
 # Creating 100 fake restaurants
+Space.delete_all
 10.times do
   space = Space.new({
     name: Faker::Company.name,

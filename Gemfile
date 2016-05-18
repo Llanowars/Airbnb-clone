@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
 ruby '2.3.0'
 
 gem 'rails', '4.2.6'
@@ -22,6 +25,8 @@ gem 'cloudinary'
 gem "attachinary"
 gem "jquery-fileupload-rails"
 gem "coffee-rails"
+gem "gmaps4rails"
+gem "geocoder"
 
 source "https://rails-assets.org" do
   gem 'rails-assets-bootstrap-datepicker'
