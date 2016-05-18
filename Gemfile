@@ -17,6 +17,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'money-rails'
 gem 'cloudinary'
 gem "attachinary"
 gem "jquery-fileupload-rails"
