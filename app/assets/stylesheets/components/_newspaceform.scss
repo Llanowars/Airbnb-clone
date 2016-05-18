@@ -31,7 +31,7 @@ padding-left: 20px;
   color: #364F6B
 }
 
-.form-inline .radio {
+.form-inline .radio label {
   border: solid 1px #EEE;
   padding: 12px;
 }
@@ -80,7 +80,11 @@ input[type="file"] {
 }
 
 .file-upload-text .fa {
+  padding-right: 15px;
+  vertical-align: sub;
+}
 
-    padding-right: 15px;
-    vertical-align: sub;
+.pictures-instructions {
+  position: relative;
+  top: -96px;
 }
