@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source "https://rails-assets.org"
 ruby '2.3.0'
 
 gem 'rails', '4.2.6'
@@ -21,10 +22,7 @@ gem 'cloudinary'
 gem "attachinary"
 gem "jquery-fileupload-rails"
 gem "coffee-rails"
-
-source "https://rails-assets.org" do
-  gem 'rails-assets-bootstrap-datepicker'
-end
+gem 'rails-assets-bootstrap-datepicker'
 
 group :development, :test do
   gem 'binding_of_caller'
