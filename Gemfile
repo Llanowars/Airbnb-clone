@@ -20,12 +20,17 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'money-rails'
 gem 'cloudinary'
 gem "attachinary"
 gem "jquery-fileupload-rails"
 gem "coffee-rails"
 gem "gmaps4rails"
 gem "geocoder"
+
+source "https://rails-assets.org" do
+  gem 'rails-assets-bootstrap-datepicker'
+end
 
 group :development, :test do
   gem 'binding_of_caller'

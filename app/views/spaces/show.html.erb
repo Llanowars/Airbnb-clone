@@ -2,24 +2,21 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-6 col-lg-8">
-      <h1><%= @space.name %></h1>
-      <p>Wifi: <%= @space.has_wifi ? "Yes" : "No" %> </p>
-      <p>Drinks: <%= @space.has_wifi ? "Yes" : "No" %> </p>
-      <p>Food: <%= @space.has_wifi ? "Yes" : "No" %> </p>
-      <p><%= @space.description %></p>
-      <p><%= @space.address%></p>
-      <p><%= @space.latitude%></p>
-      <p><%= @space.longitude%></p>
+    <div class="row bot-marged first-top-marged">
+      <div class="col-xs-8 col-md-6 col-lg-8">
+        <p><%= @space.description %></p>
+        <p><%= @space.address%></p>
+        <p><%= @space.lng%></p>
+        <p><%= @space.lat%></p>
+     </div>
     </div>
-    <div class="col-xs-12 col-md-6 col-lg-4">
-      <h1><%= @space.daily_price %>/ day</h1>
-    </div>
+  </div>
+  <div class="col-xs-12 col-md-6 col-lg-4">
+    <h1><%= @space.daily_price %>/day</h1>
   </div>
 </div>
 
 <div id="map" class="map-space"></div>
-
 
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
@@ -33,3 +30,4 @@
     })
   <% end %>
 <% end %>
+
