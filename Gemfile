@@ -1,7 +1,11 @@
 source 'https://rubygems.org'
 source "https://rails-assets.org"
+
+
+
 ruby '2.3.0'
 
+gem "rails-assets-underscore"
 gem 'rails', '4.2.6'
 gem 'puma'
 gem 'pg'
@@ -18,11 +22,15 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'money-rails'
 gem 'cloudinary'
 gem "attachinary"
 gem "jquery-fileupload-rails"
 gem "coffee-rails"
 gem 'rails-assets-bootstrap-datepicker'
+gem "gmaps4rails"
+gem "geocoder"
+
 
 group :development, :test do
   gem 'binding_of_caller'

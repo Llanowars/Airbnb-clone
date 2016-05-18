@@ -1,0 +1,15 @@
+.card-list-container {
+  position: fixed;
+  overflow-y:scroll;
+  left: 0;
+  bottom: 0;
+  width: 60%;
+  top: 70px;
+  background-color: #F5F5F5;
+}
+
+.map-index {
+  height: calc(100vh - 70px);
+  width:40%;
+  float: right
+}
