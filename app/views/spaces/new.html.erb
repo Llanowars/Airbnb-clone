@@ -10,7 +10,7 @@
       <div class="row bot-marged first-top-marged">
           <h3>Your workplace informations</h3>
         <div class="col-xs-12 col-sm-8 col-lg-6 padded-vertical">
-          <%= space.input :name, class: "field-big"%><br>
+          <%= space.input :name, class: "field-big"%>
         </div>
       </div>
       <div class="row form-inline">
@@ -25,7 +25,7 @@
           <%= space.input :has_food, as: :radio_buttons, label: "Food to buy" %>
         </div>
       </div>
-      <div class="row bot-marged">
+      <div class="row">
         <div class="col-xs-12 col-sm-10 col-lg-8 padded-vertical">
           <label for="">Description</label>
           <p class="form-instruction">Tell your future guests more about your workplace: are there restaurants nearby, a place to take a nap, do you organize events... ? Feel free to add any information that could help freelancers imagine how your workplace is !</p>
@@ -33,18 +33,29 @@
         </div>
       </div>
       <div class="row bot-marged">
+        <div class="col-xs-12 col-sm-8 col-lg-6 padded-vertical">
+          <label for="">Pictures</label>
+            <p class="file-upload-text"><i class="fa fa-camera-retro fa-2x"></i>Add a picture </p>
+
+          <div class="file-upload btn-primary">
+            <%= space.input :photo, as: :attachinary, class: "btn-primary", label: false %>
+          </div>
+          <p class="form-instruction pictures-instructions">Upload up to 8 pictures.</p>
+        </div>
+      </div>
+      <div class="row bot-marged">
         <h3>Reaching you</h3>
         <div class="col-xs-12 col-sm-8 col-lg-6 padded-vertical">
-          <%= space.input :address, class: "field-big" %><br>
+          <%= space.input :address, class: "field-big" %>
         </div>
         <div class="col-xs-6 col-sm-4 col-lg-4 padded-vertical">
-          <%= space.input :phone_number %><br>
+          <%= space.input :phone_number %>
         </div>
       </div>
       <div class="row">
        <h3>Pricing and availability</h3>
        <div class="col-xs-6 col-sm-3 col-md-4 padded-vertical">
-        <%= space.input :daily_price, class: "field-big " %><br>
+        <%= space.input :daily_price, class: "field-big " %>
        </div>
        <div class="col-xs-6 col-sm-3 col-md-4 padded-vertical">
         <%= space.input :weekly_price, class: "field-big" %>
@@ -52,15 +63,18 @@
      </div>
      <div class="row  bot-marged padded-vertical">
        <div class="col-xs-6 col-sm-3 col-md-3">
-        <%= space.input :max_people, class: "field-big" %><br>
+        <%= space.input :max_people, class: "field-big", style: "position: relative" %>
        </div>
      </div>
      <div class="row padded-vertical">
       <%= space.submit class: "btn-primary"%>
      </div>
+
     <% end %>
   </div>
 </div>
+
+<input type="date"></input>
 
 
 
