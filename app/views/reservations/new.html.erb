@@ -1,21 +1,39 @@
-<div class="wrapper-form-blue">
+<div class="wrapper-pink header">
+  <div class="container text-center">
+    <h2><%=User.all.size%> freelancers working today in Paris. Meet them !  </h2>
+  </div>
+</div>
+
+<div class="wrapper-blue-light">
   <div class="container">
     <%= simple_form_for([ @space, @reservation ]) do |reservation| %>
       <%= reservation.error_notification %>
+
+      <div class="row form-inline first-top-marged row bot-marged">
+          <h3>Space informations</h3>
+        <div class="col-xs-12 col-sm-8 col-lg-6 padded-vertical">
+        </div>
+      </div>
+
       <div class="row bot-marged">
           <h3>Reservation dates</h3>
         <div class="col-xs-12 col-sm-8 col-lg-6 padded-vertical">
-          <%= reservation.input :start_at, class: "field-big"%><br>
-          <%= reservation.input :end_at, class: "field-big"%><br>
         </div>
       </div>
-      <div class="row">
-       <h3>Pricing and availability</h3>
+
+      <div class="row row bot-marged">
+       <h3>Price</h3>
        <div class="col-xs-6 col-sm-3 col-md-4 padded-vertical">
-        <%= reservation.input :price, class: "field-big " %><br>
        </div>
      </div>
-     <div class="row padded-vertical">
+
+     <div class="row row bot-marged">
+       <h3>Payment</h3>
+       <div class="col-xs-6 col-sm-3 col-md-4 padded-vertical">
+       </div>
+     </div>
+
+     <div class="row padded-vertical bot-marged">
       <%= reservation.submit class: "btn-primary"%>
      </div>
     <% end %>
