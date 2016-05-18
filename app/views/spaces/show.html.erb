@@ -8,46 +8,33 @@
         <h1><%= @space.name %></h1>
         </div>
     </div>
-     <div class="row form-inline">
-        <h3>Services</h3>
-        <div class="col-xs-12 col-sm-4 col-md-4 padded-vertical">
-        <p>Wifi: <%= @space.has_wifi ? "Yes" : "No" %> </p>
-        <p>Drinks: <%= @space.has_wifi ? "Yes" : "No" %> </p>
-        <p>Food: <%= @space.has_wifi ? "Yes" : "No"%> </p>
-     </div>
+
+    <div class="row form-inline first-top-marged row bot-marged">
+          <h3>Services</h3>
+    <div class="col-xs-4 col-sm-2 col-lg-2 padded-horizontal">
+        </div>
+      <p>Wifi: <%= @space.has_wifi ? "Yes" : "No" %> </p>
+      <p>Drinks: <%= @space.has_wifi ? "Yes" : "No" %> </p>
+      <p>Food: <%= @space.has_wifi ? "Yes" : "No"%> </p>
       </div>
+
     <div class="row bot-marged first-top-marged">
-      <div class="col-xs-8 col-md-6 col-lg-8">
+          <h3>About this place</h3>
+      <div class="col-xs-8 col-md-6 col-lg-8 padded-horizontal">
         <p><%= @space.description %></p>
         <p><%= @space.address%></p>
         <p><%= @space.lng%></p>
         <p><%= @space.lat%></p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-4">
+        <h1><%= @space.daily_price %>/day</h1>
+
+    </div>
      </div>
     </div>
   </div>
-    <div class="col-xs-12 col-md-6 col-lg-4">
-      <h1><%= @space.daily_price %>/day</h1>
-    </div>
 </div>
 
-
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-6 col-lg-8">
-      <h1><%= @space.name %></h1>
-      <p>Wifi: <%= @space.has_wifi ? "Yes" : "No" %> </p>
-      <p>Drinks: <%= @space.has_wifi ? "Yes" : "No" %> </p>
-      <p>Food: <%= @space.has_wifi ? "Yes" : "No" %> </p>
-      <p><%= @space.description %></p>
-      <p><%= @space.address%></p>
-      <p><%= @space.lng%></p>
-      <p><%= @space.lat%></p>
-    </div>
-    <div class="col-xs-12 col-md-6 col-lg-4">
-      <h1><%= @space.daily_price %>/ day</h1>
-    </div>
-  </div>
-</div>
 
 <div id="map"></div>
 
