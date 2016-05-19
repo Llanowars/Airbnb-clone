@@ -3,18 +3,28 @@
 <div class="wrapper-blue">
   <div class="container">
     <div class="row">
-      <div class="col-xs-6 col-md-6 col-lg-8">
-        <h2 class="text-center">About this place</h2>
-        <p><b>Description:</b> <%= @space.description %></p>
-        <p><b>Address:</b> <%= @space.address%></p>
-        <p><%= @space.lng%></p>
-        <p><%= @space.lat%></p>
+      <div class="col-xs-6 col-md-6 col-lg-9">
+        <h2 class="row form-inline first-top-marged row bot-marged">About this place</h2>
+
+        <div class="row form-inline first-top-marged row bot-marged">
+        <h3>Description</h3>
+        <%= @space.description %>
+        </div>
+
+        <div class="row form-inline first-top-marged row bot-marged">
+        <h3>Address</h3>
+        <%= @space.address%>
+        </div>
       </div>
-      <div class="col-xs-6 col-md-6 col-lg-4">
+        <!-- <p><%= @space.lng%></p>
+        <p><%= @space.lat%></p> -->
+
+
+      <div class="col-xs-4 col-md-6 col-lg-3">
         <div class="book-it js-book-it">
           <div class="book-it__container js-book-it-container fixed" style="top: 40px;">
-            <h2 class="text-center"><%= @space.daily_price %>/day
-          </h2>
+            <h3 class="text-center"><%= @space.daily_price %>/day
+          </h3>
           </div>
         </div>
         <div class="panel book-it-panel">
