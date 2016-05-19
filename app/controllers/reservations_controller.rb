@@ -7,7 +7,7 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = Reservation.new(reservation_params)
+    @reservation = Reservation.create(reservation_params)
     @reservation.space = @space
     if @reservation.save
       redirect_to space_path(@space)
@@ -20,7 +20,7 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:start_at, :end_at)
+    params.require(@reservation).permit(:start_at, :end_at)
   end
 
   def find_space
