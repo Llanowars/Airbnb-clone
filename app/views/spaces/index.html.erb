@@ -2,12 +2,33 @@
 
   <div class="card-list-container">
     <div class="search-container">
-    <h3>Your search</h3>
-    <input type="text" class="form-control input-lg" placeholder="<%= Date.today %>">
+      <form action="/spaces" method="get" >
+        <div class="form-group row">
+          <label class="col-sm-2 form-control-label">Work near:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control input-lg" placeholder="Paris" id="location" value="<%= params[:address]%>" >
+          </div>
+        </div>
+        <div class="row">
+          <label class="col-sm-2 form-control-label">Dates:</label>
+          <div class="col-sm-10">
+            <div class="input-daterange input-group" id="datepicker">
+              <input type="text" class="input-sm form-control" name="start_at" placeholder="<%= params[:start_at] ? "Today" : params[:start_at]%>" value="<%= params[:start_at] ? Date.today : params[:start_at]%>"/>
+              <span class="input-group-addon">to</span>
+              <input type="text" class="input-sm form-control" name="end_at" placeholder="<%= params[:end_at] ? "Today" : params[:end_at]%>" value="<%= params[:start_at] ? Date.today : params[:start_at]%>"/>
+            </div>
+          </div>
+        </div>
+        <input class= "btn btn-primary btn-lg" type="submit" value="Search" />
+      </form>
     </div>
+    <div>
+
+    </div>
+
     <ul class="inline-list list-unstyled">
       <% @spaces.each do |space|%>
-        <%= link_to space_path(space) do %>
+        <%= link_to space_path(space, start_at: params[:start_at], end_at: params[:end_at]) do %>
           <div class="space-card-list" style='background-image:url(<%=cl_image_path(space.photos[0].path)%>)'>
             <li clas="list-inline">
 
