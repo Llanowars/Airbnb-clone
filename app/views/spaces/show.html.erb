@@ -1,20 +1,34 @@
 <div class="banner-space" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path('banner.jpg') %>');">
 </div>
-<div class="container">
-  <div class="row">
-    <div class="row bot-marged first-top-marged">
-      <div class="col-xs-8 col-md-6 col-lg-8">
-        <p><%= @space.description %></p>
-        <p><%= @space.address%></p>
+<div class="wrapper-blue">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 col-md-6 col-lg-8">
+        <h2 class="text-center">About this place</h2>
+        <p><b>Description:</b> <%= @space.description %></p>
+        <p><b>Address:</b> <%= @space.address%></p>
         <p><%= @space.lng%></p>
         <p><%= @space.lat%></p>
-     </div>
+      </div>
+      <div class="col-xs-6 col-md-6 col-lg-4">
+        <div class="book-it js-book-it">
+          <div class="book-it__container js-book-it-container fixed" style="top: 40px;">
+            <h2 class="text-center"><%= @space.daily_price %>/day
+          </h2>
+          </div>
+        </div>
+        <div class="panel book-it-panel">
+          <div class= "panel-body panel-light">
+            <button type="submit" class="btn btn-primary btn-large btn-block"<span data-reactid=".wj35yhzrpc.1.0.0.1.1.1">Réservation instantanée</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="col-xs-12 col-md-6 col-lg-4">
-    <h1><%= @space.daily_price %>/day</h1>
-  </div>
 </div>
+
+
 
 <div id="map" class="map-space"></div>
 
@@ -31,6 +45,5 @@
   <% end %>
 <% end %>
 
-<%= cl_image_tag("pzgkvt9e8jkrtufb4rsz",
-      width: 400, height: 300, crop: :fill) %>
+
 
