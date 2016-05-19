@@ -25,3 +25,25 @@
     box-sizing: border-box;
     border: 2px solid #dce0e0;
 }
+
+.row.bot-marged {
+  margin-bottom: 2px;
+}
+
+.row.first-top-marged {
+  margin-top: 30px;
+}
+
+.form-instruction {
+  font-size: 0.9em;
+  color: #777;
+}
+
+.form-control {
+  height:50px;
+}
+
+.padded-vertical {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
