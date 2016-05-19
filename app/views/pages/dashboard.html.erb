@@ -2,11 +2,14 @@
   <div class="container">
     <div class="space-card-list" style='background-image:url(<%= image_path('banner_1.jpg') %>);'>
       <li clas="list-inline">
-        <p class="space-card-price"><%= current_user.picture %></p>
+        <div class="services-container">
+          <i class="card-service" aria-hidden="true"><%= current_user.picture %></i>
+        </div>
         <h4 class="card-title"><%=current_user.email %></h4>
       </li>
     </div>
   </div>
+
 
 
   <div class="container dashboard">
