@@ -5,6 +5,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @reservations = Reservation.all
+    @reviews = Review.all
   end
 
 end
