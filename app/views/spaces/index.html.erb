@@ -1,6 +1,5 @@
-<div class="row">
 
-<div class="col-lg-4">
+
   <div class="card-list-container">
     <div class="search-container">
     <h3>Your search</h3>
@@ -9,32 +8,35 @@
     <ul class="inline-list list-unstyled">
       <% @spaces.each do |space|%>
         <%= link_to space_path(space) do %>
-          <div class="space-card-list">
-            <li>
-            <h4><%=space.name %></h4>
-            <p><%= space.description %></p>
-            <p><%=space.latitude%></p>
-            <p><%=space.longitude%></p>
+          <div class="space-card-list" style='background-image:url(<%=cl_image_path(space.photos[0].path)%>)'>
+            <li clas="list-inline">
+
+              <div class="title-price-container">
+              </div>
+              <p class="space-card-price"><%= space.daily_price %>$ / day </p>
+              <div class="services-container">
+                <%= space.has_food ? "<i class='fa fa-cutlery  card-service' aria-hidden='true'></i>".html_safe : ""%>
+                <%= space.has_drink ? "<i class='fa fa-coffee fa-2x card-service' aria-hidden='true'></i>".html_safe : ""%>
+                <%= space.has_wifi ? "<i class='fa fa-wifi  card-service' aria-hidden='true'></i>".html_safe : ""%>
+              </div>
+                <h4 class="card-title"><%=space.name %></h4>
             </li>
           </div>
         <% end %>
       <% end %>
     </ul>
   </div>
-</div>
+
 <div id=map class="map-index"></div>
 
-
-
 <!-- Require jQuery and Google map For rails javascript lib -->
-
 
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
     $(function(){
       handler = Gmaps.build('Google');
       handler.buildMap({ internal: {id: 'map'}}, function(){
-        markers = handler.addMarkers(<%=raw @hash.to_json %>);
+        markers = handler.addMarkers(<%=raw @markers.to_json %>);
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
       });
