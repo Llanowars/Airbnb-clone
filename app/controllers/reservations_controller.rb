@@ -20,7 +20,7 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(@reservation).permit(:start_at, :end_at)
+    params.require(:reservation).permit(:start_at, :end_at, :space_id, :user_id, :price)
   end
 
   def find_space
