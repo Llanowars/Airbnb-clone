@@ -6,11 +6,19 @@
     <div class="search">
       <form action="/spaces" method="get" class="form-inline">
         <input type="text" class="form-control input-lg" name="address" placeholder="Paris" id="location" >
+<<<<<<< HEAD
           <div class="input-daterange input-group" id="datepicker">
             <input type="text" class="input-sm form-control" name="start_at" placeholder="<%= params[:start_at] ? "Today" : params[:start_at]%>" value="<%= params[:start_at] ? Date.today : params[:start_at]%>"/>
             <span class="input-group-addon">to</span>
             <input type="text" class="input-sm form-control" name="end_at" placeholder="<%= params[:end_at] ? "Today" : params[:end_at]%>" value="<%= params[:start_at] ? Date.today : params[:start_at]%>"/>
           </div>
+=======
+        <div class="input-daterange input-group" id="datepicker">
+          <input type="text" class="input-sm form-control form-inline" name="start_at" placeholder="<%= Date.today%>" />
+          <span class="input-group-addon">to</span>
+          <input type="text" class="input-sm form-control form-inline" name="end_at" placeholder="end date" />
+        </div>
+>>>>>>> master
           <input class= "btn btn-primary btn-lg" type="submit" value="Search" />
       </form>
     </div>

@@ -37,6 +37,8 @@
                 <%= space.has_food ? "<i class='fa fa-cutlery  card-service' aria-hidden='true'></i>".html_safe : ""%>
                 <%= space.has_drink ? "<i class='fa fa-coffee fa-2x card-service' aria-hidden='true'></i>".html_safe : ""%>
                 <%= space.has_wifi ? "<i class='fa fa-wifi  card-service' aria-hidden='true'></i>".html_safe : ""%>
+                <%= space.max_people %>
+                <%= space.reservations.count %>
               </div>
                 <h4 class="card-title"><%=space.name %></h4>
             </li>
