@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :spaces do
     resources :reservations, only: [:new, :create]
+    resources :reviews, only: [:new, :create]
   end
 
   mount Attachinary::Engine => "/attachinary"
