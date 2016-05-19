@@ -1,37 +1,66 @@
-<div class="box box-info">
-    <h3 class="text-center">Reservations for <%= current_user.email %></h3>
-
-
+<div class="wrapper-blue-light">
   <div class="container">
-    <div class="col-xs-12 col-sm-12">
+    <div class="space-card-list" style='background-image:url(<%= image_path('banner_1.jpg') %>);'>
+      <li clas="list-inline">
+        <p class="space-card-price"><%= current_user.picture %></p>
+        <h4 class="card-title"><%=current_user.email %></h4>
+      </li>
+    </div>
+  </div>
+
+
+  <div class="container dashboard">
+    <div class="dashboard-white first-top-marged">
       <table class="table no-margin">
         <thead>
         <tr>
           <th>Location</th>
           <th>Address</th>
           <th>Dates</th>
+          <th>Price</th>
           <th>Confirmation</th>
         </tr>
         </thead>
         <tbody>
 
         <% @reservations.each do  |reservation| %>
-
-        <tr>
-          <td><a href="pages/examples/invoice.html"><%= reservation.space.name %></a></td>
-          <td><%= reservation.space.address%></td>
-          <td><%= reservation.start_at %> to <%= reservation.end_at %></td>
-          <td><span class="label label-success">Confirmed</span></td>
-          <td>
-            <div class="sparkbar" data-color="#00a65a" data-height="20"><canvas width="34" height="20" style="display: inline-block; width: 34px; height: 20px; vertical-align: top;"></canvas></div>
-          </td>
-        </tr>
-
-      <% end %>
-
+          <tr>
+            <td><%= reservation.space.name %></td>
+            <td><%= reservation.space.address%></td>
+            <td><%= reservation.start_at %> to <%= reservation.end_at %></td>
+            <td><%= reservation.price %>€</td>
+            <td><span class="label label-success">Confirmed</span></td>
+          </tr>
+        <% end %>
 
         </tbody>
       </table>
+    </div>
+
+    <div class="dashboard-white first-top-marged">
+      <table class="table no-margin">
+        <thead>
+        <tr>
+          <th>Location</th>
+          <th>Address</th>
+          <th>Review</th>
+          <th>Rating</th>
+        </tr>
+        </thead>
+        <tbody>
+
+          <% @reviews.each do  |review| %>
+            <tr>
+              <td><%= review.space.name %></td>
+              <td><%= review.space.address%></td>
+              <td><%= review.comment %></td>
+              <td><%= review.rating%></td>
+            </tr>
+          <% end %>
+
+        </tbody>
+      </table>
+      </div>
     </div>
   </div>
 </div>
