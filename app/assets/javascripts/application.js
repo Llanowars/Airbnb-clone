@@ -6,6 +6,7 @@
 //= require jquery-fileupload/basic
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
+//= require attachinary_template
 //= require underscore
 //= require gmaps/google
 //= require_tree .

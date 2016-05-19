@@ -33,14 +33,13 @@
         </div>
       </div>
       <div class="row bot-marged">
-        <div class="col-xs-12 col-sm-8 col-lg-6 padded-vertical">
+        <div class="col-xs-12 col-sm-12 col-lg-12 padded-vertical">
           <label for="">Pictures</label>
-            <p class="file-upload-text"><i class="fa fa-camera-retro fa-2x"></i>Add a picture </p>
-
-          <div class="file-upload btn-primary">
-            <%= space.input :photo, as: :attachinary, class: "btn-secondary", label: false %>
-          </div>
           <p class="form-instruction pictures-instructions">Upload up to 8 pictures.</p>
+          <div class="file-upload btn-primary">
+            <p class="file-upload-text"><i class="fa fa-camera-retro fa-2x"></i>Add a picture </p>
+          </div>
+            <%= space.input :photos, as: :attachinary, class: "btn-secondary", label: false %>
         </div>
       </div>
       <div class="row bot-marged">

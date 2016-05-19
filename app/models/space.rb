@@ -3,5 +3,5 @@ class Space < ActiveRecord::Base
   after_validation :geocode, if: :address_changed?
   belongs_to :user
   has_many :reservations, dependent: :destroy
-  has_attachment :photo
+  has_attachments :photos, maximum: 8
 end
