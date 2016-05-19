@@ -29,10 +29,11 @@
         </div>
         <div class="panel book-it-panel">
           <div class= "panel-body panel-light">
-          <div class="input-daterange input-group" id="datepicker">
-          <input type="text" class="input-sm form-control" name="start_at" placeholder="<%= Date.today%>" />
-          <span class="input-group-addon">to</span>
-          <input type="text" class="input-sm form-control" name="end_at" placeholder="end date" />
+             <div class="input-daterange input-group" id="datepicker">
+              <input type="text" class="input-sm form-control" name="start_at" placeholder="<%= params[:start_at] ? "Today" : params[:start_at]%>" value="<%= params[:start_at] ? Date.today : params[:start_at]%>"/>
+              <span class="input-group-addon">to</span>
+              <input type="text" class="input-sm form-control" name="end_at" placeholder="<%= params[:end_at] ? "Today" : params[:end_at]%>" value="<%= params[:start_at] ? Date.today : params[:start_at]%>"/>
+            </div>
         </div>
             <%= link_to "Book Now",new_space_reservation_path(@space, start_at: params[:start_at], end_at: params[:end_at]), class: "btn btn-primary btn-large btn-block" %>
           </div>
