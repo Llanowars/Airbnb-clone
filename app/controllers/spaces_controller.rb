@@ -6,6 +6,7 @@ class SpacesController < ApplicationController
           marker.lat space.latitude
           marker.lng space.longitude
         end
+    search
   end
 
   def new
@@ -15,6 +16,16 @@ class SpacesController < ApplicationController
       marker.lng space.longitude
       marker.infowindow render_to_string(:partial => "/spaces/map_box", locals: {space: space})
     end
+  end
+
+  def search
+    search_radius = 3
+    if params[:address] == ""
+      @address = "Paris, France"
+    else
+      @address = params[:address]
+    end
+    @results = @spaces.near(@address, search_radius)
   end
 
   def show
