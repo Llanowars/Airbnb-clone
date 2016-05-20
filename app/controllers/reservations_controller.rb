@@ -9,6 +9,9 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.create(reservation_params)
     @reservation.space = @space
+    @reservation.user = current_user
+    @reservation.start_at = params[:reservation][:start_at]
+    @reservation.end_at = params[:reservation][:end_at]
     if @reservation.save
       redirect_to space_path(@space)
     else
