@@ -27,9 +27,9 @@
             <label class="col-sm-2 form-control-label">Dates:</label>
             <div class="col-sm-10">
               <div class="input-daterange input-group" id="datepicker">
-                <input type="text" class="input-sm form-control" name="start_at" placeholder="<%= params[:start_at] ? "Today" : params[:start_at]%>" value="<%= params[:start_at] ? Time.now.strftime("%d/%m/%Y") : params[:start_at]%>"/>
+                <input type="text" class="input-sm form-control" name="start_at" placeholder="<%= params[:start_at] == "" ? "Today" : params[:start_at]%>" value="<%= params[:start_at] == "" ? Time.now.strftime("%d / %m / %Y") : params[:start_at]%>"/>
                 <span class="input-group-addon">to</span>
-                <input type="text" class="input-sm form-control" name="end_at" placeholder="<%= params[:end_at] ? "Today" : params[:end_at]%>" value="<%= params[:start_at] ? Time.now.strftime("%d/%m/%Y") : params[:start_at]%>"/>
+                <input type="text" class="input-sm form-control" name="end_at" placeholder="<%= params[:end_at] == ""   ? "Today" : params[:end_at]%>" value="<%= params[:start_at] == "" ? Time.now.strftime("%d / %m / %Y") : params[:start_at]%>"/>
               </div>
             </div>
           </div>
@@ -46,7 +46,7 @@
 
     <ul class="inline-list list-unstyled">
       <% @results.each do |space|%>
-        <%= link_to space_path(space, start_at: params[:start_at], end_at: params[:end_at]) do %>
+        <%= link_to space_path(space, start_at: params[:start_at] == "" ? Time.now.strftime("%d / %m / %Y") : params[:start_at], end_at: params[:start_at] == "" ? Time.now.strftime("%d / %m / %Y") : params[:start_at]) do %>
           <div class="space-card-list " style='background-image:url(<%=cl_image_path(space.photos[0].path)%>)'>
             <li clas="list-inline">
 

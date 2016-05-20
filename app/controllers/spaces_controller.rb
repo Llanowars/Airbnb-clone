@@ -30,6 +30,10 @@ class SpacesController < ApplicationController
 
   def show
     @space = Space.find(params[:id])
+    @markers = Gmaps4rails.build_markers(@space) do |space, marker|
+          marker.lat space.latitude
+          marker.lng space.longitude
+        end
   end
 
   def create
@@ -43,9 +47,16 @@ class SpacesController < ApplicationController
   end
 
   def update
+    @space = Space.find(params[:id])
+    if @space.update_attributes(space_params)
+      redirect_to space_path(@space)
+    else
+      render 'edit'
+    end
   end
 
   def edit
+    @space = Space.find(params[:id])
   end
 
   def destroy
