@@ -2,12 +2,16 @@ class SpacesController < ApplicationController
 
   def index
     @spaces = Space.all
-    @markers = Gmaps4rails.build_markers(@spaces) do |space, marker|
+    search
+    @markers = Gmaps4rails.build_markers(@results) do |space, marker|
           marker.lat space.latitude
           marker.lng space.longitude
         end
-    search
   end
+
+  def gmaps4rails_infowindow
+      "<%=@space.name%>"
+    end
 
   def new
     @space = Space.new
@@ -19,13 +23,9 @@ class SpacesController < ApplicationController
   end
 
   def search
-    search_radius = 3
-    if params[:address] == ""
-      @address = "Paris, France"
-    else
-      @address = params[:address]
-    end
-    @results = @spaces.near(@address, search_radius)
+    @search_radius = params[:search_radius] ?  params[:search_radius] : 5
+    params[:address] == "" ? @address = "Paris, France" : @address = params[:address]
+    @results = @spaces.near(@address, @search_radius)
   end
 
   def show
