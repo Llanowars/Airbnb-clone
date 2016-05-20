@@ -1,69 +1,37 @@
-<div class="wrapper-blue-light">
-  <div class="container">
-    <div class="space-card-list" style='background-image:url(<%= image_path('banner_1.jpg') %>);'>
-      <li clas="list-inline">
-        <div class="services-container">
-          <i class="card-service" aria-hidden="true"><%= current_user.picture %></i>
-        </div>
-        <h4 class="card-title"><%=current_user.email %></h4>
-      </li>
-    </div>
-  </div>
+<div class="bg-gray-light">
+  <div class="container bg-gray-light">
+    <h3>Bookings</h3>
+      <% @reservations.each do |reservation|%>
 
+          <ul class="list-inline list-unstyled card-dashboard">
+            <li><%= cl_image_tag reservation.space.photos[0].path, width: 50, height: 50,
+                 crop: :thumb, gravity: :face, radius: :max%></li>
+            <li><%= reservation.space.name %></li>
+            <li><%= reservation.start_at %></li>
+            <li><%= reservation.end_at %></li>
+            <li><%= reservation.price %></li>
+          </ul>
+      <% end %>
+        <h3>Workspaces</h3>
 
-
-  <div class="container dashboard">
-    <div class="dashboard-white first-top-marged">
-      <table class="table no-margin">
-        <thead>
-        <tr>
-          <th>Location</th>
-          <th>Address</th>
-          <th>Dates</th>
-          <th>Price</th>
-          <th>Confirmation</th>
-        </tr>
-        </thead>
-        <tbody>
-
-        <% @reservations.each do  |reservation| %>
-          <tr>
-            <td><%= reservation.space.name %></td>
-            <td><%= reservation.space.address%></td>
-            <td><%= reservation.start_at %> to <%= reservation.end_at %></td>
-            <td><%= reservation.price %>€</td>
-            <td><span class="label label-success">Confirmed</span></td>
-          </tr>
-        <% end %>
-
-        </tbody>
-      </table>
-    </div>
-
-    <div class="dashboard-white first-top-marged">
-      <table class="table no-margin">
-        <thead>
-        <tr>
-          <th>Location</th>
-          <th>Address</th>
-          <th>Review</th>
-          <th>Rating</th>
-        </tr>
-        </thead>
-        <tbody>
-
-          <% @reviews.each do  |review| %>
-            <tr>
-              <td><%= review.space.name %></td>
-              <td><%= review.space.address%></td>
-              <td><%= review.comment %></td>
-              <td><%= review.rating%></td>
-            </tr>
+          <% @spaces.each do |space|%>
+            <ul class="list-inline list-unstyled card-dashboard">
+              <li><%= cl_image_tag space.photos[0].path, width: 50, height: 50,
+                 crop: :thumb, gravity: :face, radius: :max%></li>
+              <li><%= space.name %></li>
+              <li><%= link_to "Edit workspace", edit_space_path(space) %></li>
+            </ul>
           <% end %>
 
-        </tbody>
-      </table>
-      </div>
     </div>
+
+
+
+
+
+
   </div>
-</div>
+
+
+
+

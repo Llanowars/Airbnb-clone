@@ -1,47 +1,32 @@
-<div class="banner-space" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%=cl_image_path(@space.photos[0].path)%>)">
-</div>
 <div class="wrapper-blue">
   <div class="container">
+    <div class="space-page-card col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+      <h1> <%= @space.name %></h1>
+    </div>
+  </div>
+  <div class="container">
     <div class="row">
-      <div class="col-xs-6 col-md-6 col-lg-9">
-        <h2 class="row form-inline first-top-marged row bot-marged">About this place</h2>
-
-        <div class="row form-inline first-top-marged row bot-marged">
+      <div class="col-md-8">
         <h3>Description</h3>
-        <%= @space.description %>
-        </div>
+        <p><%= @space.description%></p>
+        <h3>Services</h3>
+        <p><%= @space.description%></p>
 
-        <div class="row form-inline first-top-marged row bot-marged">
-        <h3>Address</h3>
-        <%= @space.address%>
-      <% @space.photos.each do |photo| %>
-      <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
-        </div>
       </div>
-    <% end %>
+      <div class="col-md-4">
+      <div class="card-space-booking">
+        <div class="input-daterange input-group" id="datepicker">
+                         <input type="text" class="input-sm form-control form-inline" name="start_at" placeholder="<%= Date.today%>" value="<%= params[:start_at] %>" />
+                         <input type="text" class="input-sm form-control form-inline" name="end_at" placeholder="End Date" value="<%= params[:start_at] %>"/>
 
-      <div class="col-xs-4 col-md-6 col-lg-3">
-        <div class="book-it js-book-it">
-          <div class="book-it__container js-book-it-container fixed" style="top: 40px;">
-            <h3 class="text-center"><%= @space.daily_price %>/day
-          </h3>
-          </div>
+
         </div>
-        <div class="panel book-it-panel">
-          <div class= "panel-body panel-light">
-               <div class="input-daterange input-group" id="datepicker">
-                <input type="text" class="input-sm form-control form-inline" name="start_at" placeholder="<%= Date.today%>" />
-                <span class="input-group-addon">to</span>
-                <input type="text" class="input-sm form-control form-inline" name="end_at" placeholder="End Date" />
-              </div>
-          </div>
-            <%= link_to "Book Now",new_space_reservation_path(@space, start_at: params[:start_at], end_at: params[:end_at]), class: "btn btn-primary btn-large btn-block" %>
-          </div>
-        </div>
+        <%= link_to "Book Now",new_space_reservation_path(@space, start_at: params[:start_at], end_at: params[:end_at]), class: "btn btn-primary btn-large btn-block" %>
       </div>
     </div>
   </div>
 </div>
+
 
 <div id="map" class="map-space"></div>
 
@@ -50,7 +35,7 @@
     $(function(){
       handler = Gmaps.build('Google');
       handler.buildMap({ internal: {id: 'map'}}, function(){
-        markers = handler.addMarkers(<%=raw @hash.to_json %>);
+        markers = handler.addMarkers(<%=raw @markers.to_json %>);
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
       });
