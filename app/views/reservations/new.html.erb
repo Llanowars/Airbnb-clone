@@ -15,14 +15,13 @@
       <div class="row bot-marged">
           <h3>Reservation dates</h3>
           <hr data-reactid=".1vh31zxwbnk.0.0.0.0.3.5">
-          <% params[:start_at] %>
-          <% params[:end_at] %>
+
         <div class="col-xs-12 col-sm-8 col-lg-6 padded-vertical">
         <div class="col-sm-10">
             <div class="input-daterange input-group" id="datepicker">
-              <input type="text" class="input-sm form-control" name="reservation['start_at']" placeholder="<%= params[:start_at] ? "Today" : params[:start_at]%>" value="<%= params[:start_at] ? Date.today : params[:start_at]%>"/>
+              <input type="text" class="input-sm form-control" name="reservation[start_at]" placeholder="<%= params[:start_at] ? "Today" : params[:start_at]%>" value="<%= params[:start_at] ? Date.today : params[:start_at]%>"/>
               <span class="input-group-addon">to</span>
-              <input type="text" class="input-sm form-control" name="reservation['end_at']" placeholder="<%= params[:end_at] ? "Today" : params[:end_at]%>" value="<%= params[:start_at] ? Date.today : params[:start_at]%>"/>
+              <input type="text" class="input-sm form-control" name="reservation[end_at]" placeholder="<%= params[:end_at] ? "Today" : params[:end_at]%>" value="<%= params[:start_at] ? Date.today : params[:start_at]%>"/>
             </div>
           </div>
         </div>
