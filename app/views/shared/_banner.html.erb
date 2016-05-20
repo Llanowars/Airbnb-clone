@@ -4,14 +4,22 @@
     <h1>Building communities to innovate together</h1>
     <p>Find the space you need to create your life's work.</p>
     <div class="search">
+
       <form action="/spaces" method="get" class="form-inline">
-        <input type="text" class="form-control input-lg" name="address" placeholder="Paris" id="location" >
-        <div class="input-daterange input-group" id="datepicker">
-          <input type="text" class="input-sm form-control form-inline" name="start_at" placeholder="<%= Date.today%>" />
-          <span class="input-group-addon">to</span>
-          <input type="text" class="input-sm form-control form-inline" name="end_at" placeholder="End Date" />
+        <div class="form-group">
+          <label for="">Work near</label>
+          <input type="text" class="form-control input-lg" name="address" placeholder="Paris" id="location" >
         </div>
-          <input class= "btn btn-primary btn-lg" type="submit" value="Search" />
+        <div class="input-daterange input-group form-groupe banner-search" id="datepicker">
+          <input type="text" class="input-sm form-control " name="start_at" placeholder=" Today" />
+          <span class="input-group-addon">to</span>
+<<<<<<< HEAD
+          <input type="text" class="input-sm form-control form-inline" name="end_at" placeholder="End Date" />
+=======
+          <input type="text" class="input-sm form-control " name="end_at" placeholder="end date" />
+>>>>>>> master
+        </div>
+        <input class= "btn btn-primary btn-lg" type="submit" value="Search" />
       </form>
     </div>
   </div>
