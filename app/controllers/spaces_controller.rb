@@ -6,12 +6,12 @@ class SpacesController < ApplicationController
     @markers = Gmaps4rails.build_markers(@results) do |space, marker|
           marker.lat space.latitude
           marker.lng space.longitude
-        end
+    end
   end
 
   def gmaps4rails_infowindow
-      "<%=@space.name%>"
-    end
+    "<%=@space.name%>"
+  end
 
   def new
     @space = Space.new
@@ -33,7 +33,7 @@ class SpacesController < ApplicationController
     @markers = Gmaps4rails.build_markers(@space) do |space, marker|
           marker.lat space.latitude
           marker.lng space.longitude
-        end
+    end
   end
 
   def create
@@ -59,18 +59,11 @@ class SpacesController < ApplicationController
     @space = Space.find(params[:id])
   end
 
-  def destroy
-  end
-
-
-
-
   private
 
   def space_params
     params.require(:space).permit(:name, :reservation, :address, :daily_price, :weekly_price, :has_wifi, :has_drinks, :has_food, :description, :max_people, :latitude, :longitude, photos: [])
   end
-
 end
 
 
